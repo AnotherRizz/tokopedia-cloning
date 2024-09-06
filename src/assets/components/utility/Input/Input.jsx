@@ -1,0 +1,15 @@
+const Input =(props)=>{
+  const {type,placeholder,name} =props;
+return(
+  <input
+  type={type}
+  className=" text-sm rounded-lg border w-full py-4 px-3 placeholder:opacity-50"
+  placeholder={placeholder}
+  name={name}
+  id={name}
+  />
+  
+)
+}
+
+export default Input;
