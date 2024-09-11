@@ -3,9 +3,10 @@ import { productSale } from "../data/product/DataProducts";
 import Banner from "./utility/Banner";
 import Card from "./utility/Card";
 
+
 const Sale = () => {
   return (
-    <div className="flash-sale-container p-5 mt-7">
+    <div className="flash-sale-container p-5 mt-7 border-b-2 pb-16">
       <div className="flex gap-2 items-center">
         <h2 className="text-2xl font-bold mb-3">Ada 999 Produk Rp 100!</h2>
         
@@ -32,7 +33,7 @@ const Sale = () => {
               <img
                 src={product.img}
                 alt={product.title}
-                className="w-full  object-contain"
+                className="w-full  object-contain "
               />
               <div className="p-2">
                 <p className="font-bold text-md">{product.price}</p>

@@ -86,8 +86,8 @@ const Category = () => {
         <div className="flex justify-around ">
           {List.map((list) => (
             <Button
-              variant="text- flex items-center gap-2 border rounded-lg px-1  w-full"
-              key={List.id}>
+              variant="text- flex items-center gap-2 border rounded-lg px-1  w-full" key={list.id}
+              >
               <img src={list.img} alt="" className="w-8" />
               <p className=" text-xs">{list.name}</p>
             </Button>

@@ -35,7 +35,7 @@ export const List =[
      img: "https://images.tokopedia.net/img/cache/160-square/iEWsxH/2023/4/27/8b1b8635-8822-4007-90c3-403aa53cd207.png",
    },
    {
-     id: 6,
+     id: 8,
     name: "Komputer & Laptop",
      img:"https://images.tokopedia.net/img/cache/160-square/iEWsxH/2021/10/5/be48df38-d1e5-48ba-92c4-5644f4c2939b.png",
    },
