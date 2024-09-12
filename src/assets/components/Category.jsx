@@ -1,12 +1,42 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
 import Card from "./utility/Card";
 import Link from "./utility/Link";
 import Button from "./utility/Button";
 import InputForm from "./utility/Input/InputForm";
 import { Categories } from "../data/Category/Pilihan";
 import { List } from "../data/Category/List";
+import fetchList from "./api/fetchList";
 
 const Category = () => {
+ 
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const result = await fetchList(); // Mendapatkan data dari fetchList
+        setData(result); // Menyimpan data yang diambil ke dalam state
+      } catch (error) {
+        setError('Failed to fetch data'); // Menangani kesalahan
+      } finally {
+        setLoading(false); // Mengatur status loading menjadi false
+      }
+    };
+
+    getData();
+  }, []);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+   
+    
   return (
     <section className="px-2 py-2 border rounded-lg">
       <div className="  flex">
@@ -84,12 +114,12 @@ const Category = () => {
       </div>
       <div className=" w-full mt-10 mb-3 ">
         <div className="flex justify-around ">
-          {List.map((list) => (
+          {data.map((item) => (
             <Button
-              variant="text- flex items-center gap-2 border rounded-lg px-1  w-full" key={list.id}
+              variant="text- flex items-center gap-2 border rounded-lg px-1  w-full" key={item.id}
               >
-              <img src={list.img} alt="" className="w-8" />
-              <p className=" text-xs">{list.name}</p>
+              <img src={item.img} alt="" className="w-8" />
+              <p className=" text-xs">{item.name}</p>
             </Button>
           ))}
         </div>
