@@ -6,7 +6,7 @@ import Category from "../assets/components/Category";
 import Sale from "../assets/components/Sale";
 import Trending from "../assets/components/Trending";
 import Recomended from "../assets/components/Recomended";
-import ListProduct from "../assets/components/LisTproduct";
+import ListProduct from "../assets/components/ListProduct";
 import Footer from "../assets/components/Footer";
 
 const Home = () => {
